@@ -1,6 +1,245 @@
-@ShoppingCartIDM_HostAddress = http://localhost:5215
-
-GET {{ShoppingCartIDM_HostAddress}}/weatherforecast/
-Accept: application/json
+@baseUrl = http://localhost:5215
 
 ###
+# CASOS DE PRUEBA PARA AÑADIR PRODUCTOS
+###
+
+# Prueba 1: Grupo Obligatorio Faltante
+# Esperado: Error 400 indicando que faltan grupos obligatorios.
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    }
+  ]
+}
+
+###
+
+# Prueba 2: Cantidad de Grupo EQUAL_THAN Inválida
+# Esperado: Error 400 "El grupo 'Elige tu bebida' requiere exactamente 1 selección(es), pero se enviaron 2"
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [{"attributeId": 968663, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [
+        {"attributeId": 968670, "quantity": 1},
+        {"attributeId": 968671, "quantity": 1}
+      ]
+    }
+  ]
+}
+
+###
+
+# Prueba 3: Cantidad de Grupo LOWER_EQUAL_THAN Excedida
+# Esperado: Error 400 "El grupo '¿Deseas más carnes? (opcional)' permite máximo 4 selección(es), pero se enviaron 5"
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241888",
+      "attributes": [
+        {"attributeId": 968639, "quantity": 1},
+        {"attributeId": 968640, "quantity": 1},
+        {"attributeId": 968641, "quantity": 1},
+        {"attributeId": 968642, "quantity": 1},
+        {"attributeId": 968643, "quantity": 1}
+      ]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [{"attributeId": 968663, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [{"attributeId": 968670, "quantity": 1}]
+    }
+  ]
+}
+
+###
+
+# Prueba 4: Cantidad de Atributo Excedida
+# Esperado: Error 400 "El atributo 'Carne XT' permite máximo 4 unidad(es), pero se enviaron 5"
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241888",
+      "attributes": [
+        {"attributeId": 968639, "quantity": 5}
+      ]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [{"attributeId": 968663, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [{"attributeId": 968670, "quantity": 1}]
+    }
+  ]
+}
+
+###
+
+# Prueba 5: Grupo Inexistente
+# Esperado: Error 400 "El grupo 999999 no existe en el producto"
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "999999",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    }
+  ]
+}
+
+###
+
+# Prueba 6: Atributo Inexistente
+# Esperado: Error 400 "El atributo 999999 no existe en el grupo 241887"
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 999999, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [{"attributeId": 968663, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [{"attributeId": 968670, "quantity": 1}]
+    }
+  ]
+}
+
+###
+
+# Prueba 7: Caso Exitoso de Añadir Producto
+# Esperado: Éxito 200 OK con el item creado.
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "productId": 3546345,
+  "quantity": 1,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241888",
+      "attributes": [
+        {"attributeId": 968639, "quantity": 2},
+        {"attributeId": 968643, "quantity": 1}
+      ]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [{"attributeId": 968663, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [{"attributeId": 968670, "quantity": 1}]
+    }
+  ]
+}
+
+###
+# OTROS ENDPOINTS (CASOS DE ÉXITO)
+###
+
+# NOTA: Para las siguientes peticiones, reemplace {cartItemId} con un ID
+#       obtenido al crear un producto exitosamente (Prueba 7).
+
+# Actualizar Producto (Éxito)
+PUT {{baseUrl}}/api/cart/items/76622e3d-ceb5-44f4-a3c2-511c5aead8cd
+Content-Type: application/json
+
+{
+  "quantity": 2,
+  "groupAttributes": [
+    {
+      "groupAttributeId": "241887",
+      "attributes": [{"attributeId": 968636, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241891",
+      "attributes": [{"attributeId": 968663, "quantity": 1}]
+    },
+    {
+      "groupAttributeId": "241892",
+      "attributes": [{"attributeId": 968670, "quantity": 1}]
+    }
+  ]
+}
+
+###
+
+# Ajustar Cantidad (Éxito)
+# Incrementa la cantidad en 1.
+PATCH {{baseUrl}}/api/cart/items/76622e3d-ceb5-44f4-a3c2-511c5aead8cd/quantity
+Content-Type: application/json
+
+{
+  "adjustment": 3
+}
+
+###
+
+# Eliminar Producto (Éxito)
+DELETE {{baseUrl}}/api/cart/items/76622e3d-ceb5-44f4-a3c2-511c5aead8cd
+
+###
+
+# Obtener Carrito (Éxito)
+GET {{baseUrl}}/api/cart
