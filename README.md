@@ -250,9 +250,8 @@ A continuación se muestran varios escenarios de prueba para los endpoints.
 -   **Payload**:
     ```json
     {
-      "quantity": 2, // Cantidad actualizada
+      "quantity": 2,
       "groupAttributes": [
-        // Mismos o nuevos atributos que cumplan las reglas
         {
           "groupAttributeId": "241887",
           "attributes": [{"attributeId": 968636, "quantity": 1}]

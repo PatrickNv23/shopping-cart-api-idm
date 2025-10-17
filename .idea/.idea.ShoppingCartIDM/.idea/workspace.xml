@@ -9,37 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0153c984-c182-4ad4-993c-098feb3ca8f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Features/Cart/Commands/AddCartItemCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Features/Cart/Commands/AdjustQuantityCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Features/Cart/Commands/RemoveCartItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Features/Cart/Commands/UpdateCartItemCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Features/Cart/Queries/GetCartQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Services/CartValidationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Services/ICartValidationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Services/IPriceCalculatorService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Services/PriceCalculatorService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/Result.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/CartController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/Dtos/AddCartItemRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Cart.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/CartItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Product.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Repositories/ICartRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Repositories/IProductRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Repositories/InMemoryCartRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Repositories/InMemoryProductRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Middleware/GlobalExceptionMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingCartIDM.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingCartIDM.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingCartIDM.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ShoppingCartIDM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShoppingCartIDM/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingCartIDM.http" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingCartIDM.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,20 +24,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.ShoppingCartIDM/.idea/httpRequests/2025-10-16T225207.400.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/DependencyInjection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Features/Cart/Commands/AddCartItemCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Features/Cart/Commands/AdjustQuantityCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Features/Cart/Commands/RemoveCartItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Features/Cart/Commands/UpdateCartItemCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Features/Cart/Queries/GetCartQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Application/Services/CartValidationService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Application/Services/CartValidationService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Services/CartValidationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Application/Services/CartValidationService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Application/Services/CartValidationService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Services/ICartValidationService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Services/IPriceCalculatorService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Application/Services/PriceCalculatorService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Services/PriceCalculatorService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Common/Result.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/CartController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/Dtos/AddCartItemRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Cart.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Domain/Entities/CartItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Domain/Entities/CartItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/Documents/DesarrolloWeb/proyectos_net/ShoppingCartIDM/Domain/Entities/CartItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/CartItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Product.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Repositories/ICartRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,9 +56,14 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/InMemoryProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Middleware/GlobalExceptionMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
 }]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="348NZVEQDy3V0slHgVkp6jWrAd4" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -90,10 +75,21 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.ShoppingCartIDM: http.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #1.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #10.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #11.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #2.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #3.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #4.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #5.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #6.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #7.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #8.executor": "Run",
+    "HTTP Request.ShoppingCartIDM | #9.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -104,7 +100,39 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <map>
+              <entry key="ShoppingCartIDM | #2" value="STOPPED" />
+              <entry key="ShoppingCartIDM | #3" value="STOPPED" />
+              <entry key="ShoppingCartIDM | #4" value="STOPPED" />
+              <entry key="ShoppingCartIDM | #5" value="STOPPED" />
+              <entry key="ShoppingCartIDM | #6" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ShoppingCartIDM: http">
+    <configuration name="ShoppingCartIDM | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ShoppingCartIDM.http" executionIdentifier="#2" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ShoppingCartIDM | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ShoppingCartIDM.http" executionIdentifier="#3" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ShoppingCartIDM | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ShoppingCartIDM.http" executionIdentifier="#4" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ShoppingCartIDM | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ShoppingCartIDM.http" executionIdentifier="#5" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ShoppingCartIDM | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ShoppingCartIDM.http" executionIdentifier="#6" index="6" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="ShoppingCartIDM: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ShoppingCartIDM.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
@@ -137,6 +165,15 @@
         <option name="Build" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.ShoppingCartIDM | #6" />
+        <item itemvalue="HTTP Request.ShoppingCartIDM | #5" />
+        <item itemvalue="HTTP Request.ShoppingCartIDM | #4" />
+        <item itemvalue="HTTP Request.ShoppingCartIDM | #3" />
+        <item itemvalue="HTTP Request.ShoppingCartIDM | #2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -152,6 +189,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
