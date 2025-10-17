@@ -17,13 +17,14 @@ public class CartValidationService : ICartValidationService
             if (selectedGroup == null || !selectedGroup.Attributes.Any())
             {
                 errors.Add($"El grupo obligatorio '{mandatoryGroup.GroupAttributeType.Name}' debe ser seleccionado");
-                continue; // Skip further validation for this group
+                continue;
             }
         }
 
         // Validar cada grupo enviado
         foreach (var selectedGroup in selectedGroups)
         {
+            // consistencia de grupos
             var productGroup = product.GroupAttributes.FirstOrDefault(g => g.GroupAttributeId == selectedGroup.GroupAttributeId);
             if (productGroup == null)
             {
@@ -31,6 +32,7 @@ public class CartValidationService : ICartValidationService
                 continue;
             }
             
+            // Validar cantidades de grupos
             var numberOfSelectedAttributes = selectedGroup.Attributes.Count(a => a.Quantity > 0);
             var verifyValue = productGroup.QuantityInformation.VerifyValue;
             var requiredQuantity = productGroup.QuantityInformation.GroupAttributeQuantity;
@@ -47,6 +49,7 @@ public class CartValidationService : ICartValidationService
             // Validar cada atributo individualmente
             foreach (var selectedAttr in selectedGroup.Attributes)
             {
+                // consistencia de atributos
                 var productAttr = productGroup.Attributes.FirstOrDefault(a => a.AttributeId == selectedAttr.AttributeId);
                 if (productAttr == null)
                 {
