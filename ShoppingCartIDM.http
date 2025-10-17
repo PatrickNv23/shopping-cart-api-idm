@@ -202,7 +202,7 @@ Content-Type: application/json
 #       obtenido al crear un producto exitosamente (Prueba 7).
 
 # Actualizar Producto (Éxito)
-PUT {{baseUrl}}/api/cart/items/76622e3d-ceb5-44f4-a3c2-511c5aead8cd
+PUT {{baseUrl}}/api/cart/items/6cffc197-064b-4888-b108-f65ab61cc789
 Content-Type: application/json
 
 {
@@ -227,7 +227,7 @@ Content-Type: application/json
 
 # Ajustar Cantidad (Éxito)
 # Incrementa la cantidad en 1.
-PATCH {{baseUrl}}/api/cart/items/76622e3d-ceb5-44f4-a3c2-511c5aead8cd/quantity
+PATCH {{baseUrl}}/api/cart/items/6cffc197-064b-4888-b108-f65ab61cc789/quantity
 Content-Type: application/json
 
 {
@@ -237,7 +237,7 @@ Content-Type: application/json
 ###
 
 # Eliminar Producto (Éxito)
-DELETE {{baseUrl}}/api/cart/items/76622e3d-ceb5-44f4-a3c2-511c5aead8cd
+DELETE {{baseUrl}}/api/cart/items/6cffc197-064b-4888-b108-f65ab61cc789
 
 ###
 
