@@ -9,6 +9,19 @@ public class CartValidationService : ICartValidationService
     {
         var errors = new List<string>();
 
+        // Validar grupos obligatorios primero
+        var mandatoryGroups = product.GroupAttributes.Where(g => g.QuantityInformation.VerifyValue == "EQUAL_THAN");
+        foreach (var mandatoryGroup in mandatoryGroups)
+        {
+            var selectedGroup = selectedGroups.FirstOrDefault(g => g.GroupAttributeId == mandatoryGroup.GroupAttributeId);
+            if (selectedGroup == null || !selectedGroup.Attributes.Any())
+            {
+                errors.Add($"El grupo obligatorio '{mandatoryGroup.GroupAttributeType.Name}' debe ser seleccionado");
+                continue; // Skip further validation for this group
+            }
+        }
+
+        // Validar cada grupo enviado
         foreach (var selectedGroup in selectedGroups)
         {
             var productGroup = product.GroupAttributes.FirstOrDefault(g => g.GroupAttributeId == selectedGroup.GroupAttributeId);
@@ -17,20 +30,21 @@ public class CartValidationService : ICartValidationService
                 errors.Add($"El grupo {selectedGroup.GroupAttributeId} no existe en el producto");
                 continue;
             }
-
-            var totalSelectedAttributes = selectedGroup.Attributes.Sum(a => a.Quantity);
+            
+            var numberOfSelectedAttributes = selectedGroup.Attributes.Count(a => a.Quantity > 0);
             var verifyValue = productGroup.QuantityInformation.VerifyValue;
             var requiredQuantity = productGroup.QuantityInformation.GroupAttributeQuantity;
 
-            if (verifyValue == "EQUAL_THAN" && totalSelectedAttributes != requiredQuantity)
+            if (verifyValue == "EQUAL_THAN" && numberOfSelectedAttributes != requiredQuantity)
             {
-                errors.Add($"El grupo '{productGroup.GroupAttributeType.Name}' requiere exactamente {requiredQuantity} selección(es), pero se enviaron {totalSelectedAttributes}");
+                errors.Add($"El grupo '{productGroup.GroupAttributeType.Name}' requiere exactamente {requiredQuantity} selección(es), pero se enviaron {numberOfSelectedAttributes}");
             }
-            else if (verifyValue == "LOWER_EQUAL_THAN" && totalSelectedAttributes > requiredQuantity)
+            else if (verifyValue == "LOWER_EQUAL_THAN" && numberOfSelectedAttributes > requiredQuantity)
             {
-                errors.Add($"El grupo '{productGroup.GroupAttributeType.Name}' permite máximo {requiredQuantity} selección(es), pero se enviaron {totalSelectedAttributes}");
+                errors.Add($"El grupo '{productGroup.GroupAttributeType.Name}' permite máximo {requiredQuantity} selección(es), pero se enviaron {numberOfSelectedAttributes}");
             }
 
+            // Validar cada atributo individualmente
             foreach (var selectedAttr in selectedGroup.Attributes)
             {
                 var productAttr = productGroup.Attributes.FirstOrDefault(a => a.AttributeId == selectedAttr.AttributeId);
@@ -52,14 +66,6 @@ public class CartValidationService : ICartValidationService
             }
         }
 
-        var mandatoryGroups = product.GroupAttributes.Where(g => g.QuantityInformation.VerifyValue == "EQUAL_THAN");
-        errors.AddRange(
-            from mandatoryGroup in mandatoryGroups 
-            let selectedGroup = selectedGroups
-                .FirstOrDefault(g => g.GroupAttributeId == mandatoryGroup.GroupAttributeId) 
-            where selectedGroup == null || selectedGroup.Attributes.Count == 0
-            select $"El grupo obligatorio '{mandatoryGroup.GroupAttributeType.Name}' debe ser seleccionado");
-
-        return Task.FromResult(errors.Count > 0 ? Result.Failure(errors) : Result.Success());
+        return Task.FromResult(errors.Any() ? Result.Failure(errors) : Result.Success());
     }
 }
